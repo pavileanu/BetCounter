@@ -7,8 +7,9 @@ app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-
 app.set('view engine', 'ejs');
+
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.get('/', (req, res) => {
     res.render('index', { formArray: [], oddsArray : []});
@@ -24,6 +25,6 @@ app.post('/', (req, res, next) => {
 
 app.use(express.static(`${__dirname}/public`));
 
-app.listen(3000, function () {
+app.listen((process.env.PORT || 5000), function () {
   console.log('Example app listening on port 3000!');
 });
