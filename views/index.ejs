@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Bet Counter</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    </head>
+
+    <h1 class="text-center">Bet Counter</h1>
+    <body>
+        <main class="wrapper">
+            <form action="/" method="POST">
+                <div class="form-group">
+                    <label for="firstOdd">First Odd</label>
+                    <input type="text" class="form-control" id="firstOdd" name="firstOdd" value=<%= formArray[0] %>>
+                </div>
+                <div class="form-group">
+                    <label for="secondOdd">Second Odd</label>
+                    <input type="text" class="form-control" id="secondOdd" name="secondOdd" value=<%= formArray[1] %>>
+                </div>
+                <div class="form-group">
+                    <label for="firstMoney">First Money</label>
+                    <input type="text" class="form-control" id="firstMoney" name="firstMoney" value=<%= formArray[2] %>>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <span> 
+                Interval to bet: 
+                <span class="badge badge-secondary"><%= oddsArray[0] %></span> &nbsp;&nbsp; from 
+                <span class="badge badge-secondary"><%= oddsArray[1] %></span> 
+            </span>
+        </main>
+    </body>
+</html>
